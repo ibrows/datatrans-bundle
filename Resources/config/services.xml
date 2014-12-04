@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="ibrows.datatrans.class.logger">Psr\Log\NullLogger</parameter>
+        <parameter key="ibrows.datatrans.class.validatorfactory">Ibrows\DataTransBundle\Validator\ValidatorFactory</parameter>
+        <parameter key="ibrows.datatrans.class.validator">Symfony\Component\Validator\Validator\RecursiveValidator</parameter>
+        <parameter key="ibrows.datatrans.class.errorhandler">Ibrows\DataTrans\Error\ErrorHandler</parameter>
+        <parameter key="ibrows.datatrans.class.serializer">Ibrows\DataTrans\Serializer\Serializer</parameter>
+        <parameter key="ibrows.datatrans.class.authorization">Ibrows\DataTrans\Api\Authorization\Authorization</parameter>
+    </parameters>
+
+    <services>
+        <service id="ibrows.datatrans.service.logger" class="%ibrows.datatrans.class.logger%" />
+        <service id="ibrows.datatrans.service.validator"
+                 class="%ibrows.datatrans.class.validator%"
+                 factory-class="%ibrows.datatrans.class.validatorfactory%"
+                 factory-method="getValidator"
+        />
+        <service id="ibrows.datatrans.service.errorhandler" class="%ibrows.datatrans.class.errorhandler%">
+            <argument>null</argument>
+        </service>
+        <service id="ibrows.datatrans.service.serializer" class="%ibrows.datatrans.class.serializer%">
+            <argument type="service" id="ibrows.datatrans.service.errorhandler" />
+        </service>
+        <service id="ibrows.datatrans.service.authorization" class="%ibrows.datatrans.class.authorization%">
+            <argument>null</argument>
+            <argument type="service" id="ibrows.datatrans.service.errorhandler" />
+            <argument type="service" id="ibrows.datatrans.service.serializer" />
+        </service>
+    </services>
+</container>
