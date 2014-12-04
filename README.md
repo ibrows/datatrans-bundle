@@ -33,9 +33,19 @@ Through [Composer](http://getcomposer.org)
 You can use each `psr-3` implementation, create your own service and add its id to the bundle configuration.
 
 ``` {.yml}
-ibrows_datatrans:
+ibrows_data_trans:
     logger: my_logger_serviceid  # or logger if you like symfony default
 ```
+
+#### Replace Validator
+
+Create your own service and add its id to the bundle configuration.
+
+``` {.yml}
+ibrows_data_trans:
+    logger: my_validator_serviceid  # or logger if you like symfony default
+```
+
 
 ## Usage
 
