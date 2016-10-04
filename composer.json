@@ -11,7 +11,7 @@
   ],
   "require": {
     "php": ">=5.3.3",
-    "ibrows/datatrans": "~1.0,>=1.0.1",
+    "ibrows/datatrans": "dev-master",
     "symfony/config": "~2.3|~3.0",
     "symfony/dependency-injection": "~2.3|~3.0",
     "symfony/http-kernel": "~2.3|~3.0"
