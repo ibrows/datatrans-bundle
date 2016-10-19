@@ -17,7 +17,7 @@
         <service id="ibrows.datatrans.service.validator"
                  class="%ibrows.datatrans.class.validator%"
         >
-            <factory service="%ibrows.datatrans.class.validatorfactory%" method="getValidator"/>
+            <factory class="%ibrows.datatrans.class.validatorfactory%" method="getValidator"/>
 
         </service>
         <service id="ibrows.datatrans.service.errorhandler" class="%ibrows.datatrans.class.errorhandler%">
