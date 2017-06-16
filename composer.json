@@ -21,8 +21,8 @@
   },
   "repositories": [
     {
-      "type": "vcs",
-      "url": "git@codebasehq.com:ibrows/ibrowsch/datatrans.git"
+      "type": "composer",
+      "url":  "https://php.fury.io/tsxbfoEUdGY2R61mKLDF/pwcsexperiencecenter/"
     }
   ],
   "autoload": {
