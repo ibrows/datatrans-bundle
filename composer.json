@@ -22,7 +22,7 @@
   "repositories": [
     {
       "type": "vcs",
-      "url": "git@codebasehq.com:ibrows/ibrowsch/datatrans.git"
+      "url": "ssh://git@gitlab.pwc-digital.ch:7999/ec/bundles/datatrans.git"
     }
   ],
   "autoload": {
